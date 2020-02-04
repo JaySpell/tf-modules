@@ -1,6 +1,5 @@
 provider "docker" {
-    host = "${var.local_dock_host}"
-
+    host = var.local_dock_host
 }
 
 resource "docker_container" "websrv-dock" {
