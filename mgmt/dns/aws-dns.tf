@@ -1,16 +1,12 @@
-resource "aws_route53_zone" "dnszone" {
-    name = var.dnszone
-}
-
 resource "aws_route53_record" "default" {
-  zone_id = aws_route53_zone.dnszone.zone_id
+  zone_id = var.zoneid
   name    = var.hostname
   type    = "A"
   ttl     = "300"
   records = [var.public_ip]
 }
 
-variable "dnszone" {
+variable "zoneid" {
     description = "Zone ID for update on Route 53"
     default     = ""
 }
