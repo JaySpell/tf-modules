@@ -1,9 +1,10 @@
 resource "aws_route53_record" "default" {
-  zone_id = var.zoneid
-  name    = var.hostname
-  type    = "A"
-  ttl     = "300"
-  records = [var.public_ip]
+  zone_id           = var.zoneid
+  name              = var.hostname
+  type              = "A"
+  ttl               = "300"
+  records           = [var.public_ip]
+  allow_overwrite   = true
 }
 
 variable "zoneid" {
