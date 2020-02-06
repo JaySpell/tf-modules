@@ -1,8 +1,3 @@
-provider "aws" {
-    profile = "default"
-    region  = var.aws_region
-}
-
 resource "aws_route53_record" "hostname" {
   zone_id = var.aws_zoneid
   name    = var.hostname
@@ -22,5 +17,3 @@ variable "hostname" {
 variable "public_ip" {
     description = "Public IP"
 }
-
-
