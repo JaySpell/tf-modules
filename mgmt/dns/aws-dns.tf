@@ -12,6 +12,7 @@ resource "aws_route53_record" "default" {
 
 variable "dnszone" {
     description = "Zone ID for update on Route 53"
+    default     = ""
 }
 
 variable "hostname" {
