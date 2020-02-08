@@ -9,7 +9,8 @@ resource "aws_security_group" "allow_http" {
     protocol    = "tcp"
     # Please restrict your ingress to only necessary IPs and ports.
     # Opening to 0.0.0.0/0 can lead to security vulnerabilities.
-    cidr_blocks = # add a CIDR block here
+    # add a CIDR block here
+    cidr_blocks = var.cidr_block
   }
 
   egress {
@@ -33,6 +34,10 @@ variable "to_port" {
     description = "Ingress to port"
 }
 
-var "vpcid" {
+variable "vpcid" {
     description = "AWS VPC ID"
+}
+
+variable "cidr_block" {
+    description = "AWS cidr block"
 }
