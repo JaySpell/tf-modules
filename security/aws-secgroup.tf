@@ -22,10 +22,6 @@ resource "aws_security_group" "allow_http" {
   }
 }
 
-variable "aws_vpc" {
-    description = "AWS VPC"
-}
-
 variable "from_port" {
     description = "Ingress from port"
 }
