@@ -1,7 +1,7 @@
 resource "aws_security_group" "allow_http" {
   name        = "allow_http"
   description = "Allow HTTP inbound traffic"
-  vpc_id      = aws_vpc.main.id
+  vpc_id      = var.vpcid
 
   ingress {
     from_port   = var.from_port
@@ -31,4 +31,8 @@ variable "from_port" {
 
 variable "to_port" {
     description = "Ingress to port"
+}
+
+var "vpcid" {
+    description = "AWS VPC ID"
 }
