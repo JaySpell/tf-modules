@@ -1,3 +1,7 @@
+provider "aws" {
+  profile = "default"
+}
+
 resource "aws_route53_record" "default" {
   zone_id           = var.zoneid
   name              = var.hostname
