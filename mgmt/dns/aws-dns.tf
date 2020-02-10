@@ -1,5 +1,6 @@
 provider "aws" {
   profile = "default"
+  region = "global"
 }
 
 resource "aws_route53_record" "default" {
