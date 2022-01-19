@@ -1,4 +1,4 @@
-provider "docker" {
+provider "kreuzwerker/docker" {
     host = var.local_dock_host
 }
 
