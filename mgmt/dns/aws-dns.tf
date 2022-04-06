@@ -12,6 +12,15 @@ resource "aws_route53_record" "default" {
   allow_overwrite   = true
 }
 
+resource "aws_route53_record" "cname" {
+  zone_id           = var.zoneid
+  name              = var.hostname
+  type              = "CNAME"
+  ttl               = "10"
+  records           = [var.arecord]
+  allow_overwrite   = true
+}
+
 variable "zoneid" {
     description = "Zone ID for update on Route 53"
     default     = ""
